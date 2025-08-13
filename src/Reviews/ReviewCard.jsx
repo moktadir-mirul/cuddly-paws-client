@@ -26,7 +26,7 @@ const ReviewCard = ({
 
   const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
   const scale = useTransform(progress, range, [1, targetScale]);
-const bgColor = darkMode ? bgDark : bgLight;
+  const bgColor = darkMode ? bgDark : bgLight;
   return (
     <div
       ref={ref}
@@ -41,9 +41,14 @@ const bgColor = darkMode ? bgDark : bgLight;
         className={`flex flex-col relative -top-[25%] h-auto w-9/12 mx-auto rounded-md p-10 origin-top`}
       >
         <div
-          className={`${darkMode ? `${bgDark}` : `${bgLight}`} p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col`}
+          className={`${
+            darkMode ? `${bgDark}` : `${bgLight}`
+          } p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col`}
         >
-          <FaQuoteLeft className="text-blue-600 dark:text-sky-400 text-2xl mb-4" size={40} />
+          <FaQuoteLeft
+            className="text-blue-600 dark:text-sky-400 text-2xl mb-4"
+            size={40}
+          />
           <p className="text-gray-800 dark:text-gray-200 w-11/12 lg:w-9/12 text-center mx-auto mb-6 flex-grow">
             "{review}"
           </p>
