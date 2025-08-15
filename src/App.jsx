@@ -4,6 +4,7 @@ import Banner from "./Components/Banner/Banner";
 import CallToAction from "./Components/CallToAction/CallToAction";
 import Categories from "./Components/Categories/Categories";
 import PetCareResources from "./Components/Resources/Resources";
+import WhyUs from "./Components/WhyUs/WhyUs";
 import Login from "./Pages/Login/Login";
 import Reviews from "./Reviews/Reviews";
 
@@ -15,6 +16,7 @@ function App() {
       <CallToAction></CallToAction>
       <AboutUs></AboutUs>
       <PetCareResources></PetCareResources>
+      <WhyUs></WhyUs>
       <Reviews></Reviews>
     </div>
   );
