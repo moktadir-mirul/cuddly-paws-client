@@ -25,7 +25,7 @@ const AboutUs = () => {
         <h2 className="play text-4xl md:text-6xl font-bold text-center pb-1 text-blue-600 dark:text-sky-400 ">
           About Us
         </h2>
-        <p className="pt-1 text-center text-gray-600 dark:text-gray-200 mb-12 max-w-2xl mx-auto">
+        <p className="pt-1 text-center text-xl text-gray-800 dark:text-gray-200 mb-12 max-w-2xl mx-auto">
           Connecting loving pets with caring owners since 2023
         </p>
 

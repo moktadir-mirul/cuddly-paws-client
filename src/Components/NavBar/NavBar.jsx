@@ -118,6 +118,11 @@ const NavBar = () => {
           <NavLink to={"/donations"} className="text-base">
             Donation Campaigns
           </NavLink>
+          {user && <>
+          <NavLink to={"/dashboard"} className="text-base">
+            Dashboard
+          </NavLink>
+          </>}
         </NavbarCollapse>
       </Navbar>
     </div>

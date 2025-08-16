@@ -16,7 +16,7 @@ const WhyUs = () => {
           Why Choose Cuddly Paws?
         </h2>
         {/* Paragraph */}
-        <p className="pt-1 text-center text-gray-600 dark:text-gray-200 mb-12 max-w-2xl mx-auto">
+        <p className="pt-1 text-center text-xl text-gray-800 dark:text-gray-200 mb-12 max-w-2xl mx-auto">
           At Cuddly Paws, we believe every pet deserves a loving home.  
           Our growing community has helped hundreds of animals find families,  
           and your support keeps the mission alive.

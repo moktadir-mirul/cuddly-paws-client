@@ -170,7 +170,7 @@ const Register = () => {
   };
 
   return (
-    <div className="w-full bg-[url(./assets/reg.jpg)] dark:bg-[url(./assets/reg-d.jpg)] bg-no-repeat xl:h-screen bg-cover flex justify-center lg:justify-start items-center py-5 lg:pl-20">
+    <div className="w-full bg-[url(./assets/reg.jpg)] dark:bg-[url(./assets/reg-d.jpg)] bg-no-repeat bg-cover flex justify-center lg:justify-start items-center py-5 lg:pl-20">
       <div
         className={`${
           darkMode ? "form-bg-d" : "form-bg"

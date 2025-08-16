@@ -123,7 +123,7 @@ const handleEmailLogin = (e) => {
 }
 
   return (
-    <div className="w-full bg-[url(./assets/pet-login.jpg)] dark:bg-[url(./assets/pet-loginD.jpg)] bg-no-repeat xl:h-screen bg-cover flex justify-center items-center py-5">
+    <div className="w-full bg-[url(./assets/pet-login.jpg)] dark:bg-[url(./assets/pet-loginD.jpg)] bg-no-repeat bg-cover flex justify-center items-center py-5">
       <div
         className={`${
           darkMode ? "form-bg-d" : "form-bg"
