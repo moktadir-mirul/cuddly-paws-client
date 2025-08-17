@@ -122,6 +122,9 @@ const NavBar = () => {
           <NavLink to={"/dashboard"} className="text-base">
             Dashboard
           </NavLink>
+          <NavLink to={"/dashboard/mypets"} className="text-base">
+            My Pets
+          </NavLink>
           </>}
         </NavbarCollapse>
       </Navbar>

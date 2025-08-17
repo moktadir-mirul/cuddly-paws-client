@@ -230,7 +230,7 @@ const DashHome = () => {
           Recent Pets Added
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {pets.slice(0, 4).map((pet) => (
+          {pets?.slice(0, 4).map((pet) => (
             <div
               key={pet._id}
               className="bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg"

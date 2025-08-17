@@ -6,7 +6,7 @@ const PetsLoading = () => {
   return (
     <div className="w-full bg-white dark:bg-gray-900 pb-10">
       <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[...Array(6)].map((_, idx) => (
+        {[...Array(3)].map((_, idx) => (
           <div
             key={idx}
             className="max-w-md rounded-xl overflow-hidden shadow-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"

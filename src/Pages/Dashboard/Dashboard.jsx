@@ -13,6 +13,7 @@ import {
   FaHome,
   FaHandHoldingUsd,
 } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
 import { GrUserAdmin } from "react-icons/gr";
 import { FiLogOut } from "react-icons/fi";
 import DarkToggle from "../../Components/DarkToggle/DarkToggle";
@@ -63,6 +64,16 @@ const DashboardLayout = () => {
         </span>
         <span>Dashboard Home</span>
       </Link>
+
+      <NavLink
+        to="/dashboard/myprofile"
+        className="flex items-center px-3 rounded-lg dark:text-gray-100"
+      >
+        <span className="mr-3">
+          <CgProfile />
+        </span>
+        <span>My Profile</span>
+      </NavLink>
 
       <NavLink
         to="/dashboard/addpet"

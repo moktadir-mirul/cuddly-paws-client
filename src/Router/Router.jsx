@@ -24,6 +24,7 @@ import AdminRoute from "../PrivateRoutes/AdminRoute";
 import AllPets from "../Pages/AllPets/AllPets";
 import AllDonations from "../Pages/AllDonations/AllDonations";
 import Forbidden from "../Pages/Forbidden/Forbidden";
+import MyProfile from "../Pages/MyProfile/MyProfile";
 
 export const Router = createBrowserRouter([
     {
@@ -75,6 +76,10 @@ export const Router = createBrowserRouter([
             {
                 path: "/dashboard/mypets",
                 element:<PrivateRoute><MyPets></MyPets></PrivateRoute>
+            },
+            {
+                path: "/dashboard/myprofile",
+                element:<PrivateRoute><MyProfile></MyProfile></PrivateRoute>,
             },
             {
                 path:"/dashboard/createdonation",

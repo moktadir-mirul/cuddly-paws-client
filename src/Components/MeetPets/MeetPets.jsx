@@ -3,6 +3,7 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import PetsLoading from "../LoadingState/PetsLoading";
 import PetCard from "../../Pages/ListedPets/PetCard";
+import HomePetCard from "./HomePetCard";
 
 const MeetPets = () => {
   const axiosSecure = useAxiosSecure();
@@ -34,7 +35,7 @@ const MeetPets = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {pets?.pets?.map((pet) => (
-              <PetCard key={pet._id} pet={pet} />
+              <HomePetCard key={pet._id} pet={pet} />
             ))}
           </div>
         )}
