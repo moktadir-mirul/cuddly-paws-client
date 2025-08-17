@@ -31,9 +31,8 @@ const DashboardLayout = () => {
   const { user, userLogOut } = useContext(AuthContext);
   const { role, roleBasedLoading } = useUserRole();
   useEffect(() => {
-    document.title = "Dashboard | Cuddly Paws"
-  }, [])
-
+    document.title = "Dashboard | Cuddly Paws";
+  }, []);
 
   // Check screen size and toggle mobile view
   useEffect(() => {
@@ -48,8 +47,8 @@ const DashboardLayout = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  if(roleBasedLoading) {
-    return <LoadingCard></LoadingCard>
+  if (roleBasedLoading) {
+    return <LoadingCard></LoadingCard>;
   }
 
   // Navigation links data
@@ -135,46 +134,47 @@ const DashboardLayout = () => {
         <span>My Donations</span>
       </NavLink>
 
-      {
-        role == "admin" && <><NavLink
-        to="/dashboard/allusers"
-        className="flex items-center px-3 rounded-lg dark:text-gray-100"
-      >
-        <span className="mr-3">
-          <GrUserAdmin />
-        </span>
-        <span>Make Admin</span>
-      </NavLink>
-      <NavLink
-        to="/dashboard/allpets"
-        className="flex items-center px-3 rounded-lg dark:text-gray-100"
-      >
-        <span className="mr-3">
-          <GiHamburgerMenu />
-        </span>
-        <span>All Pets</span>
-      </NavLink>
-
-      <NavLink
-        to="/dashboard/alldonations"
-        className="flex items-center px-3 rounded-lg dark:text-gray-100"
-      >
-        <span className="mr-3">
-          <FaHandHoldingUsd />
-        </span>
-        <span>All Donations Campaigns</span>
-      </NavLink> </>
-      }
+      {role == "admin" && (
+        <>
+          <NavLink
+            to="/dashboard/allusers"
+            className="flex items-center px-3 rounded-lg dark:text-gray-100"
+          >
+            <span className="mr-3">
+              <GrUserAdmin />
+            </span>
+            <span>Make Admin</span>
+          </NavLink>
+          <NavLink
+            to="/dashboard/allpets"
+            className="flex items-center px-3 rounded-lg dark:text-gray-100"
+          >
+            <span className="mr-3">
+              <GiHamburgerMenu />
+            </span>
+            <span>All Pets</span>
+          </NavLink>
+          <NavLink
+            to="/dashboard/alldonations"
+            className="flex items-center px-3 rounded-lg dark:text-gray-100"
+          >
+            <span className="mr-3">
+              <FaHandHoldingUsd />
+            </span>
+            <span>All Donations Campaigns</span>
+          </NavLink>{" "}
+        </>
+      )}
     </>
   );
 
   const handleLogOut = () => {
     userLogOut()
-    .then(() => {
-      toast.success("User logged out successfully!")
-    })
-    .catch(err => toast.error(err.message))
-  }
+      .then(() => {
+        toast.success("User logged out successfully!");
+      })
+      .catch((err) => toast.error(err.message));
+  };
 
   return (
     <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
@@ -242,7 +242,10 @@ const DashboardLayout = () => {
 
         {/* Logout Button */}
         <div className="p-4 border-t border-gray-200 dark:border-gray-600">
-          <button onClick={handleLogOut} className="flex items-center w-full p-3 text-gray-600 bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:text-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors cursor-pointer">
+          <button
+            onClick={handleLogOut}
+            className="flex items-center w-full p-3 text-gray-600 bg-gray-100 dark:bg-gray-600 hover:bg-gray-200 dark:text-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors cursor-pointer"
+          >
             <FiLogOut className="mr-3" />
             <span>Logout</span>
           </button>
@@ -265,13 +268,17 @@ const DashboardLayout = () => {
       >
         {/* User Profile */}
         <div className="flex items-center p-4 space-x-3 border-b border-gray-200 dark:border-gray-600">
-          <img
-            src="https://randomuser.me/api/portraits/women/44.jpg"
-            alt="User"
-            className="w-10 h-10 rounded-full object-cover"
-          />
+          {user ? (
+            <img
+              src={user.photoURL}
+              alt={user.displayName}
+              className="w-10 h-10 rounded-full object-cover"
+            />
+          ) : (
+            <FaUserCircle size={30} color="blue" />
+          )}
           <span className="font-medium text-gray-700 dark:text-gray-200">
-            Sarah Johnson
+            {user ? user.displayName : "Name Loading"}
           </span>
         </div>
 
@@ -281,7 +288,10 @@ const DashboardLayout = () => {
         </nav>
 
         <div className="p-4 border-t border-gray-200 dark:border-gray-600">
-          <button onClick={handleLogOut} className="flex items-center w-full p-3 text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 rounded-lg transition-colors cursor-pointer">
+          <button
+            onClick={handleLogOut}
+            className="flex items-center w-full p-3 text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 rounded-lg transition-colors cursor-pointer"
+          >
             <FiLogOut className="mr-3" />
             <span>Logout</span>
           </button>

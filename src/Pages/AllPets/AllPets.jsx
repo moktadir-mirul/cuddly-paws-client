@@ -15,7 +15,7 @@ const AllPets = () => {
     }, [])
 
   const { data: pets = [], isLoading } = useQuery({
-    queryKey: ["pets"],
+    queryKey: ["dashboardAllPets"],
     queryFn: async () => {
       const res = await axiosSecure.get("/allpets");
       return res.data;
