@@ -38,6 +38,7 @@
 - 💬 **React TipTap** – Rich text editor
 - 🦴 **React Loading Skeleton** – Skeleton loading states
 - 📚 **Flowbite** – Component libraries
+- 📝 **Recharts** – Statistic Charts
 
 ### 🔐 Auth & Role Management
 
@@ -71,6 +72,7 @@
 - [`flowbite-react`](https://flowbite-react.com/)
 - [`framer-motion`](https://www.framer.com/motion/)
 - [`stripe/react-stripe-js`](https://stripe.com/docs/js)
+- [`Recharts`](https://recharts.org/en-US)
 
 
 ## 🧑‍💻 How to Run This Project Locally

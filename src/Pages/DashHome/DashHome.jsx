@@ -4,6 +4,7 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useEffect } from "react";
+import ChartOfPayment from "./ChartOfPayment";
 
 const DashHome = () => {
   const axiosSecure = useAxiosSecure();
@@ -205,6 +206,7 @@ const DashHome = () => {
             </div>
           </div>
         </div>
+        
 
         {/* Ongoing Campaigns Card */}
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-l-4 border-yellow-500">
@@ -223,9 +225,9 @@ const DashHome = () => {
           </div>
         </div>
       </div>
-
+    <ChartOfPayment></ChartOfPayment>
       {/* Recent Pets Section */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+      <div className="bg-white mt-5 dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
         <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
           Recent Pets Added
         </h2>
