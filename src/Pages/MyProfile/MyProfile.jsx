@@ -4,6 +4,7 @@ import { FaUser, FaCalendarAlt, FaPaw } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { AuthContext } from "../../AuthProvider/AuthContext";
+import SingleLoadingCard from "../../Components/LoadingState/SingleLoadingCard";
 
 
 const MyProfile = () => {
@@ -38,7 +39,7 @@ const email = user.email;
     minute: "2-digit",
   });
   if(isLoading) {
-    return <p>Loading ...</p>
+    return <SingleLoadingCard></SingleLoadingCard>;
   }
 
   return (

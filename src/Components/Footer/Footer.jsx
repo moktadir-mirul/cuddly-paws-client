@@ -12,8 +12,15 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import { CiYoutube } from "react-icons/ci";
+import { toast } from "react-toastify";
 
 const Footer = () => {
+  const handleSubSubmit = e => {
+    e.preventDefault();
+    toast.error("Subscription is not available right now!");
+    const form = e.target;
+    form.reset();
+  }
   return (
     <div className="w-full bg-blue-600 dark:bg-blue-700 text-white dark:text-gray-200">
       <div className="w-11/12 mx-auto pt-8 pb-5">
@@ -73,7 +80,7 @@ const Footer = () => {
                 newsletter!
               </p>
             </div>
-            <div className="flex items-center w-full max-w-sm">
+            <form onSubmit={handleSubSubmit} className="flex items-center w-full max-w-sm">
               <div className="relative flex-grow">
                 <input
                   type="email"
@@ -83,10 +90,10 @@ const Footer = () => {
             bg-gray-50 dark:bg-gray-300 text-gray-900 dark:text-black"
                 />
               </div>
-              <button className="bg-gray-200 px-4 lg:px-2 py-2 md:px-8 md:py-2 dark:bg-gray-200 text-blue-600 hover:bg-blue-900 hover:text-white dark:text-blue-800 font-bold cursor-pointer rounded-r-lg">
+              <button type="submit" className="bg-gray-200 px-4 lg:px-2 py-2 md:px-8 md:py-2 dark:bg-gray-200 text-blue-600 hover:bg-blue-900 hover:text-white dark:text-blue-800 font-bold cursor-pointer rounded-r-lg">
                 Subscribe
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
