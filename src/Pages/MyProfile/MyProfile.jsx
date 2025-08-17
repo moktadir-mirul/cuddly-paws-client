@@ -9,7 +9,7 @@ import SingleLoadingCard from "../../Components/LoadingState/SingleLoadingCard";
 
 const MyProfile = () => {
     const {user} = useContext(AuthContext);
-    console.log(user)
+
     useEffect(() => {
         document.title = "My Profile | Cuddly Paws"
     }, []);
@@ -28,9 +28,7 @@ const email = user.email;
         }
     })
 
-    console.log(profiles)
 
-  // Format the creation date
   const formattedDate = new Date(profiles[0]?.createdAt).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",

@@ -84,11 +84,11 @@ const NavBar = () => {
                   {user.email}
                 </span>
               </DropdownHeader>
-              <Link to={"/dashboard"}>
+              {/* <Link to={"/dashboard"}>
                 <DropdownItem className="bg-blue-600 dark:bg-blue-800 hover:text-black text-white dark:text-gray-200">
                   Dashboard
                 </DropdownItem>
-              </Link>
+              </Link> */}
               <DropdownDivider />
               <DropdownItem
                 className="bg-blue-600 dark:bg-blue-800 hover:text-black text-white dark:text-gray-200"

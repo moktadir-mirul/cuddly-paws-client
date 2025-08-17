@@ -49,7 +49,7 @@ const ChartOfPayment = () => {
   ];
 
   return (
-    <div className="w-full shadow-md rounded-2xl bg-white dark:bg-gray-900 p-4">
+    <div className="w-full shadow-md rounded-2xl bg-white dark:bg-gray-800 p-4">
       <h2 className="text-xl font-semibold mb-4 text-blue-600 dark:text-sky-400">
         Donation Distribution by Donor
       </h2>

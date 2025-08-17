@@ -9,40 +9,39 @@ import ChartOfPayment from "./ChartOfPayment";
 const DashHome = () => {
   const axiosSecure = useAxiosSecure();
   useEffect(() => {
-      document.title = "Dashboard | Cuddly Paws"
-    }, [])
+    document.title = "Dashboard | Cuddly Paws";
+  }, []);
 
-  // Fetch pets data
+
   const { data: pets = [], isLoading: petsLoading } = useQuery({
-    queryKey: ["pets"],
+    queryKey: ["AllPets"],
     queryFn: async () => {
-      const { data } = await axiosSecure.get("/allpets");
-      return data;
+      const  res  = await axiosSecure.get("/allpets");
+      return res.data;
     },
   });
 
-  // Fetch donations data
+
   const { data: donations = [], isLoading: donationsLoading } = useQuery({
     queryKey: ["donations"],
     queryFn: async () => {
-      const { data } = await axiosSecure.get("/donations");
-      return data;
+      const res = await axiosSecure.get("/donations");
+      return res.data;
     },
   });
 
-  // Calculate stats
+
   const totalPets = pets.length;
   const totalCampaigns = donations.length;
   const ongoingCampaigns = donations.filter(
     (donation) => donation.donationStatus
   ).length;
 
-  // ... (other imports remain the same)
+
 
   if (petsLoading || donationsLoading) {
     return (
       <div className="dark:bg-gray-900 min-h-screen p-4 md:p-8">
-
         <h1 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-6">
           <Skeleton width={200} />
         </h1>
@@ -167,7 +166,6 @@ const DashHome = () => {
 
   return (
     <div className="dark:bg-gray-900 min-h-screen p-4 md:p-8">
-
       <h1 className="text-2xl md:text-3xl font-bold text-blue-600 dark:text-sky-400 mb-6">
         Dashboard Overview
       </h1>
@@ -206,7 +204,6 @@ const DashHome = () => {
             </div>
           </div>
         </div>
-        
 
         {/* Ongoing Campaigns Card */}
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 border-l-4 border-yellow-500">
@@ -225,14 +222,18 @@ const DashHome = () => {
           </div>
         </div>
       </div>
-    <ChartOfPayment></ChartOfPayment>
+
+      {/* Chart Section */}
+      <ChartOfPayment></ChartOfPayment>
+
+
       {/* Recent Pets Section */}
       <div className="bg-white mt-5 dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
         <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
           Recent Pets Added
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {pets?.slice(0, 4).map((pet) => (
+          {pets.slice(0, 4).map((pet) => (
             <div
               key={pet._id}
               className="bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg"
