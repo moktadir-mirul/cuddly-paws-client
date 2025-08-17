@@ -35,7 +35,7 @@ const DonationCard = ({ campaign }) => {
             {daysText}
           </button>
           </div>
-          <div className="py-1 font-bold text-xl">{campaign.name}</div>
+          <div className="py-1 font-bold text-xl text-gray-800 dark:text-gray-50">{campaign.name}</div>
           <div className="flex justify-start items-center mb-3 gap-2">
             <span className="text-gray-700 dark:text-gray-100">Maximum Donation:</span>
             <span className="text-base font-bold text-blue-600 dark:text-blue-400 flex items-center">

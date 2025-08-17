@@ -6,9 +6,11 @@ import useAxiosSecure from "../Hooks/useAxiosSecure";
 import { toast } from "react-toastify";
 import { useParams } from "react-router";
 import { AuthContext } from "../AuthProvider/AuthContext";
+import { ThemeContext } from "../ThemeProvider/ThemeContext";
 
 const DonationPaymentModal = () => {
   const { user } = useContext(AuthContext);
+  const {darkMode} = useContext(ThemeContext);
   const stripe = useStripe();
   const elements = useElements();
   const [step, setStep] = useState("amount"); // 'amount' or 'payment'
@@ -219,13 +221,13 @@ const DonationPaymentModal = () => {
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
               Card Details
             </label>
-            <div className="p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800">
+            <div className="p-3 border border-gray-300 dark:border-gray-600 dark:text-gray-50 rounded-lg bg-white dark:bg-gray-800">
               <CardElement
                 options={{
                   style: {
                     base: {
                       fontSize: "16px",
-                      color: "#1f2937",
+                      color: `${darkMode ? "#fff" : "#1f2937"}`,
                       "::placeholder": { color: "#9ca3af" },
                       iconColor: "#3b82f6",
                     },
